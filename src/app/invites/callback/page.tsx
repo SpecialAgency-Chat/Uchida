@@ -32,7 +32,7 @@ export default async function Page({
     );
   }
   const result = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/invites`,
+    `${process.env.NEXT_PUBLIC_API_URL}/invites/callback`,
     {
       method: "POST",
       headers: {
