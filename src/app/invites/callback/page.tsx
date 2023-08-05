@@ -21,7 +21,7 @@ export default async function Page({
     );
   }
   const d = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/invites?code=${searchParams?.code}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/invites?code=${searchParams?.state}`,
   );
   const json = await d.json();
   if (json.error) {
