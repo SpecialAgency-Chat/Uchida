@@ -21,7 +21,7 @@ export default async function Page({
     );
   }
   const d = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/invites?code=${searchParams?.state}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/invites?code=${searchParams?.state}&timestamp=${new Date().getTime()}`,
   );
   const json = await d.json();
   if (json.error) {
@@ -32,7 +32,7 @@ export default async function Page({
     );
   }
   const result = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/invites/callback`,
+    `${process.env.NEXT_PUBLIC_API_URL}/invites/callback?timestamp=${new Date().getTime()}`,
     {
       method: "POST",
       headers: {

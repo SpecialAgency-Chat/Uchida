@@ -9,7 +9,7 @@ export default async function Page({
     throw new Error("Developer Error: NEXT_PUBLIC_INVITE_REDIRECT_URI is not set");
   }
   const d = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/invites?code=${searchParams?.code}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/invites?code=${searchParams?.code}&timestamp=${new Date().getTime()}`,
   );
   const json = await d.json();
   if (json.error) {
